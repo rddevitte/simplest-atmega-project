@@ -1,12 +1,14 @@
 # Simplest ~~ATmega (megaAVR)~~ AVR projects
 
-Those projects aim to (at least it tries to) be the smallest and simplest ones possible for the
+Those projects aim to (at least they try to) be the smallest and simplest ones possible for the
 Microchip's (formerly Atmel) [ATmega328P](https://www.microchip.com/en-us/product/ATmega328P)
 and [ATtiny85](https://www.microchip.com/en-us/product/ATtiny85) microcontrollers, both pretty
 popular among the hobbyist community. They can be freely used as a basis for bigger, more
 elaborated, projects.
 
-The projects are intended to be run on a GNU/Linux environment; [see below](#environment).
+The projects are intended to be built on a GNU/Linux environment; [see below](#environment). To
+build on Windows, a tool such as [MinGW-w64](https://www.mingw-w64.org/), [MSYS2](https://www.msys2.org/)
+or [Cygwin](http://cygwin.com/) is required.
 
 ## Content
 
@@ -14,14 +16,15 @@ This repo is comprised of two projects, one for ATmega328P and the other for ATt
 separated directories. Each project dir. contains:
 
  - A single C source file (`main.c`). What it does is just disable ADC and other units for power
-   saving, blink an LED connected at a pin for 3 times and then power the uC down.
+   saving, blink a LED connected to a pin for 3 times and then power the uC down.
 
  - A GNU makefile. Running `make` or `make all` will only compile the source and generate a `.hex`
    file; to burn down the `.hex` onto the microcontroller, `make install` must be issued.
 
 ## Environment
 
-The softwares used for compiling the codes and write them onto the ICs were:
+The softwares used to compile the codes, "extract" from the binary ELF the HEX file and write them
+onto the ICs were, respectively:
 
  - `avr-gcc` (GCC) 5.4.0
  - GNU `avr-objcopy` (GNU Binutils) 2.26.20160125
@@ -46,7 +49,7 @@ board being programmed.
 
 ### ATtiny85
 
-The second target is an ATtiny85 running in a breadboard. It has no bootloader.
+The second target is an ATtiny85 running at 8MHz in a breadboard. It has no bootloader.
 
 To program the chip it was made a custom shield board to connect to an Arduino, which in its turn
 acts as an AVRISP programmer. Below is a picture of the ATtiny chip being programmed.
