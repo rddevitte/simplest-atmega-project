@@ -1,4 +1,4 @@
-# Simplest ~~ATmega (megaAVR)~~ AVR projects
+# Simplest AVR projects
 
 Those projects aim to (at least they try to) be the smallest and simplest ones possible for the
 Microchip's (formerly Atmel) [ATmega328P](https://www.microchip.com/en-us/product/ATmega328P)
